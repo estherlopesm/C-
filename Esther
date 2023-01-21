@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+
+/*
+Três amigos jogaram na loteria. Caso eles ganhem, o prêmio deve ser repartido proporcionalmente 
+ao valor que cada um deu para a realização da aposta. Faça um programa que leia quanto cada apostador
+investiu, o valor do prêmio, e imprima quanto cada um ganharia do prêmio com base no valor investido.
+*/
+
+namespace Loteria
+
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double a1, a2, a3, premio, total, p1, p2, p3; /* declarando variáveis */
+
+
+            Console.WriteLine("Valor do Prêmio: ");
+            premio = double.Parse(Console.ReadLine());
+            
+            Console.WriteLine("Valor de João: "); 
+            a1 = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Valor de Pedro: "); 
+            a2 = double.Parse(Console.ReadLine());   
+
+            Console.WriteLine("Valor de Thiago: ");
+            a3 = double.Parse(Console.ReadLine());
+
+            total = a1 + a2 + a3; 
+            Console.WriteLine("O valor total das apostas é: " + total); 
+
+            double pj = (a1 * 100) / total;
+            double pp = (a1 * 100) / total;
+            double pt = (a1 * 100) / total;
+
+            p1 = premio * pj; 
+            p2 = premio * pp;   
+            p3 = premio * pt;
+
+            Console.WriteLine($"O João ganha: {(p1 / 100):F2}, Pedro ganha: {(p2 / 100):F2} e Thiago : {(p3 / 100):F2} ");
