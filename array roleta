@@ -52,6 +52,7 @@ namespace exerc_arraylist
              * 
              * int numeroSorteado = aleatorio.Next(1, 61); 
              * Console.WriteLine($"Número sorteado:{numeroSorteado"}; 
+             * foreach (var item in numeros);
              * 
              * contador++; 
              * 
