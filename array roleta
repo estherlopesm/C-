@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace exerc_arraylist
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Desenvolva um programa capaz de realizar um sorteio utilizando
+            //o intervalo de números de 1 a 60. O programa deve sortear 6 números,
+            //sem repetições, dentro deste intervalo e exíbi-los para o usuário.//
+
+            Console.WriteLine("Bem vindo ao sorteador");
+
+
+            Random rand = new Random();
+
+            int numero;
+            int contador = 0;
+            int[] numeros = new int[6]; // declarando os números inteiros
+
+
+            do
+            {
+                numero = rand.Next(0, 61); // declarando o intervalo no aleatório
+
+                if (!numeros.Contains(numero))
+                {
+                    numeros[contador] = numero;
+                    contador++; // criando o gerador aleatório 
+                }
+
+
+            } while (contador < 6);
+            Console.Write("Os numeros sorteados sao: ");
+
+
+            for (int i = 0; i < numeros.Length; i++)
+            {
+                Console.Write($"{numeros[i]} ");
+            }
+            Console.ReadLine();
+
+
+            
+            /* Random Aleatorio = new Random(); 
+             * int numeros = 6; 
+             * int contador = 0;
+             * for (int i = 0; i < 60; i++) 
+             * 
+             * int numeroSorteado = aleatorio.Next(1, 61); 
+             * Console.WriteLine($"Número sorteado:{numeroSorteado"}; 
+             * 
+             * contador++; 
+             * 
+             * } while (contador < numeros); */
